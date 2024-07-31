@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .bg-change 
+    {
+        background-color:  yellow;
+    }
+
+    .bg{
+        width: 300px;
+        height: 300px;
+    }
+    .border
+    {  
+        width: 80px;
+        height: 40px;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+
+    <div class="parent-div"> 
+        <div class="hello">  hello </div>
+        <div class="bg">  change background  </div>
+        <div class="remove"> remove me </div>
+        <div class="border"> border color </div>
+        <button class="para"> change paragraph </button>
+        <ul class="list1"> this is list </ul>
+        <div>
+            <!-- <img src="https://picsum.photos/536/354"/> -->
+             <img src="https://tse4.mm.bing.net/th?id=OIP.ABxetoZWRGN9HRaOLYK-JgHaE5&pid=Api&P=0&h=180" class="imagetag">
+  </div>
+</body>
+
+<script>
+    //select and change text
+    const changetext = document.querySelector('.hello')
+    changetext.textContent = 'hello utkarsh'
+
+    //add and remove class
+    changetext.classList.add('new-class')
+
+    changetext.classList.remove('new-class')
+
+    //select element anf change bg 
+    document.querySelector('.bg').style.backgroundColor = "blue"
+   
+    //create new and append it 
+     const newone = document.createElement('div')
+     newone.textContent = 'new div is added'
+     changetext.appendChild(newone)
+
+     //add list 
+     const list = document.querySelector('.list1')
+     const newlist = document.createElement('li')
+     newlist.textContent = 'new list is here'
+     list.appendChild(newlist)
+
+
+     //remove element
+     const parent = document.querySelector('.parent-div')
+     const removed = document.querySelector('.remove')
+     parent.removeChild(removed)
+
+     //remove last child
+    //  parent.removeChild(changetext)
+   
+     //modify attribute 
+     const changepic = document.querySelector('.imagetag')
+     changepic.setAttribute('src' , 'https://tse3.mm.bing.net/th?id=OIP.ICB6-oYZGHAIUrMNKjNFDgAAAA&pid=Api&P=0&h=180')
+
+     //event handler 
+     const paragraph = document.querySelector('.para')
+     const border = document.querySelector('.border')
+
+     paragraph.addEventListener('click' , ()=> {
+        paragraph.textContent = 'change the paragraph'
+     })
+
+     border.addEventListener('mouseover' ,() => {
+        border.style.border = "4px solid red";
+     })
+   
+   </script>
+</html>
